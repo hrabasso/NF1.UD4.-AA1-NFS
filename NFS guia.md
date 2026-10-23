@@ -6,9 +6,9 @@ Per començar, hem de crear dues màquines virtuals: Ubuntu Server 24.04 LTS, qu
 
 
 
-![Captura 1](img/1.png)
+![Configuracio de xarxa](img/1.png)
 
-![Captura 2](img/2.png)
+![Configuracio de xarxa](img/2.png)
 
 
 
@@ -28,7 +28,7 @@ sudo apt update && sudo apt upgrade -y&#x20;
 
 ```
 
-![Captura 3](img/3.png)
+![Update && Upgrade](img/3.png)
 
 
 
@@ -66,7 +66,7 @@ groupadd admins
 
 ```
 
-![Captura 4](img/4.png)
+![Afegir grups](img/4.png)
 
 
 
@@ -98,7 +98,7 @@ En la qual com podrem veure en la captura, els 2 grups d'han creat correctament
 
 
 
-![Captura 5](img/5.png)
+![Verificar si s'han creat correctament](img/5.png)
 
 
 
@@ -128,7 +128,7 @@ grep dev01 /etc/passwd
 
 
 
-![Captura 6](img/6.png)
+![Afegir usuari a grup](img/6.png)
 
 
 
@@ -156,7 +156,7 @@ grep admin01 /etc/passwd
 
 ```
 
-![Captura 7](img/7.png)
+![Afegir usuari a grup i verificar](img/7.png)
 
 
 
@@ -170,7 +170,7 @@ mkdir /srv/nfs/dev_projects -p
 
 ```
 
-![Captura 8](img/8.png)
+![Crear directori /srv/nfs/admin_tools](img/8.png)
 
 
 
@@ -188,7 +188,7 @@ mkdir /srv/nfs/admin_tools
 
 
 
-![Captura 9](img/9.png)
+![Crear un altre directori](img/9.png)
 
 
 
@@ -212,7 +212,7 @@ chown root:admins /srv/nfs/admin_tools
 
 ```
 
-![Captura 10](img/10.png)
+![Configurar el propietari dels grups](img/10.png)
 
 
 
@@ -236,7 +236,7 @@ chmod 770 /srv/nfs/admin_tools
 
 
 
-![Captura 11](img/11.png)
+![Aplicar chmod 770 a ambes](img/11.png)
 
 
 
@@ -244,7 +244,7 @@ Per comprobar que els permisos s'han aplicat correctament hem de utilitzar la se
 
 
 
-![Captura 12](img/12.png)
+![Comprobar els permisos que estiguin correctes](img/12.png)
 
 
 
@@ -258,23 +258,23 @@ Per poder continuar hem de crear els grups i usuaris dins de la maquina client (
 
 
 
-![Captura 13](img/13.png)
+![users i grups](img/13.png)
 
 
 
-![Captura 14](img/14.png)
+![Crear usuari desde client](img/14.png)
 
 
 
-![Captura 15](img/15.png)
+![Crear usuari desde client](img/15.png)
 
 
 
-![Captura 16](img/16.png)
+![Cambiar contraseña](img/16.png)
 
 
 
-![Captura 17](img/17.png)
+![Cambiar contraseña](img/17.png)
 
 
 
@@ -282,7 +282,7 @@ Hem de comprobar que els números d'identificació coincideixin a les dues màqu
 
 
 
-![Captura 18](img/18.png)
+![Comprobar numeros d'identificacio estiguin correctament](img/18.png)
 
 Els UID i GID dels usuaris i grups han de coincidir a les dues màquines. Si no coincideixen, cal ajustar-los abans de continuar; NFS utilitza aquests identificadors numèrics per comprovar la propietat i els permisos.
 
@@ -306,7 +306,7 @@ sudo apt install nfs-kernel-server -y
 
 
 
-![Captura 19](img/19.png)
+![instalar nfs](img/19.png)
 
 
 
@@ -314,7 +314,7 @@ Veiem que s'ha instal·lat correctament i podem continuar, sino hem de tornar a 
 
 
 
-![Captura 20](img/20.png)
+![Comprobar que estigui instalat correctament](img/20.png)
 
 
 
@@ -384,7 +384,7 @@ Amb aquesta comanda podem veure quins arxius es poden exportar. La captura et mo
 
 
 
-![Captura 23](img/23.png)
+![Veure arxius que es poden exportar](img/23.png)
 
 
 
@@ -404,7 +404,7 @@ rpcinfo -p 192.168.56.103
 
 
 
-![Captura 24](img/24.png)
+![Veure port nfs](img/24.png)
 
 
 
@@ -438,7 +438,7 @@ showmount -e 192.168.56.103
 
 
 
-![Captura 25](img/25.png)
+![Conectarse al servidor](img/25.png)
 
 
 
@@ -472,7 +472,7 @@ sudo mkdir -p /mnt/admin_tools
 
 
 
-![Captura 26](img/26.png)
+![Exportar arxius](img/26.png)
 
 
 
